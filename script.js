@@ -82,21 +82,62 @@ function playRound(computerChoice, playerChoice)
             return "computer"
         }
     }
+    else 
+    {
+        return "No Winner"
+    }
 }
 
 
-// Main body 
+function playGame()
+{
+    // intialize variables 
+    computerChoice = "new"
+    playerChoice = "new"
 
+    computerScore = 0
+    playerScore = 0
 
-// Test functions 
-// console.log(getComputerChoice());
-// console.log(getPlayerChoice());
+    // Play 5 rounds
+    for(let i = 1; i<6; i ++)
+    {   
 
-humanScore = 0;
-computerScore = 0;
+        // Get inputs
+        computerChoice = getComputerChoice()
+        playerChoice = getPlayerChoice()
 
-computerChoice = getComputerChoice();
-playerChoice = getPlayerChoice();
+        // computer winner and display score
+        result = playRound(computerChoice, playerChoice).toUpperCase()
+        console.log (result)
 
-result = playRound(computerChoice, playerChoice).toUpperCase();
-console.log(result)
+        if (result == "PLAYER")
+        {
+            console.log("Round: "+ i + " Winner is Player")
+            playerScore ++ 
+        }
+        else if (result == "COMPUTER")
+        {
+            console.log("Round: "+ i + " Winner is Computer")
+            computerScore ++ 
+        }
+        else if (result == "TIE")
+        {
+            console.log("Round: "+ i + " No winner, it's a tie")
+        }
+
+        console.log("Score: Computer: " + computerScore + " Player: " + playerScore)
+    }
+}
+
+// Main body
+
+// humanScore = 0;
+// computerScore = 0;
+
+// const computerChoice = getComputerChoice();
+// const playerChoice = getPlayerChoice();
+
+// result = playRound(computerChoice, playerChoice).toUpperCase();
+// console.log(result)
+
+playGame()
