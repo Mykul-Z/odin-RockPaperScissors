@@ -1,4 +1,7 @@
 
+// TO-DO
+// Create function to accept human input 
+// Create function to compare human vs computer choice and determine winner 
 
 // This functions selects the computers choice in Rock Paper Scissors
 function getComputerChoice ()
@@ -21,9 +24,19 @@ function getComputerChoice ()
 
     }
 
-    return computerChoice
+    return computerChoice.toUpperCase()
+}
+
+
+function getPlayerChoice()
+{
+    playerChoice = prompt("Please enter your choice of Rock, Papers, or Scissors:");
+
+    return playerChoice.toUpperCase()
 }
 
 
 
-console.log(getComputerChoice())
+
+console.log(getComputerChoice());
+console.log(getPlayerChoice());
