@@ -24,19 +24,79 @@ function getComputerChoice ()
 
     }
 
-    return computerChoice.toUpperCase()
+    return computerChoice
 }
 
-
+// This function gets the player's choice 
 function getPlayerChoice()
 {
     playerChoice = prompt("Please enter your choice of Rock, Papers, or Scissors:");
 
-    return playerChoice.toUpperCase()
+    return playerChoice
+}
+
+// This function computes the winner of the round of RPS
+function playRound(computerChoice, playerChoice)
+{
+
+    console.log("The computer chose " + computerChoice +" and the player chose " + playerChoice)
+    // Game logic to decide winner
+
+    if (computerChoice.toUpperCase() == playerChoice.toUpperCase())
+    {
+        return "tie"
+    }
+    else if(computerChoice.toUpperCase() == "ROCK")
+    {
+        console.log("Computer = " + computerChoice)
+        if(playerChoice.toUpperCase() == "PAPER")
+        {
+            return "player"
+        }
+        else if(playerChoice.toUpperCase() == "SCISSORS")
+        {
+            return "computer"
+        }
+    }
+    else if(computerChoice.toUpperCase() == "PAPER")
+    {
+        console.log("Computer = " + computerChoice)
+        if(playerChoice.toUpperCase() == "SCISSORS")
+        {
+            return "player"
+        }
+        else if(playerChoice.toUpperCase() == "ROCK")
+        {
+            return "computer"
+        }
+    }
+    else if(computerChoice.toUpperCase() == "SCISSORS")
+    {
+        console.log("Computer = " + computerChoice)
+        if(playerChoice.toUpperCase() == "ROCK")
+        {
+            return "player"
+        }
+        else if(playerChoice.toUpperCase() == "PAPER")
+        {
+            return "computer"
+        }
+    }
 }
 
 
+// Main body 
 
 
-console.log(getComputerChoice());
-console.log(getPlayerChoice());
+// Test functions 
+// console.log(getComputerChoice());
+// console.log(getPlayerChoice());
+
+humanScore = 0;
+computerScore = 0;
+
+computerChoice = getComputerChoice();
+playerChoice = getPlayerChoice();
+
+result = playRound(computerChoice, playerChoice).toUpperCase();
+console.log(result)
