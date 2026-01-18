@@ -91,7 +91,7 @@ function playRound(computerChoice, playerChoice)
 
 function playGame()
 {
-    // intialize variables 
+    // initialize variables 
     computerChoice = "new"
     playerChoice = "new"
 
