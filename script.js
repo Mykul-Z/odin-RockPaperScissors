@@ -99,7 +99,7 @@ function playGame()
     playerScore = 0
 
     // Play 5 rounds
-    for(let i = 1; i<6; i ++)
+    for(let i = 1; i<2; i ++)
     {   
 
         // Get inputs
