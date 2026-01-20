@@ -1,7 +1,53 @@
 
-// TO-DO
-// Create function to accept human input 
-// Create function to compare human vs computer choice and determine winner 
+ 
+//  Main body
+
+humanScore = 0;
+computerScore = 0;
+
+// Event listeners:
+
+let playerOptions = document.querySelector("#playerOptions");
+
+playerOptions.addEventListener("click", (event) =>
+
+    {
+        let target = event.target;
+
+        switch(target.id)
+        {
+            case "rock":
+                playerChoice = "rock";
+                computerChoice = getComputerChoice();
+
+                roundResult = playRound(playerChoice, computerChoice);
+                console.log(roundResult);
+                break;
+            case "paper":
+                playerChoice = "paper";
+                computerChoice = getComputerChoice();
+
+                roundResult = playRound(playerChoice, computerChoice);
+                console.log(roundResult);
+                break;
+            case "scissors":
+                playerChoice = "scissors";
+                computerChoice = getComputerChoice();
+
+                roundResult = playRound(playerChoice, computerChoice);
+                console.log(roundResult);
+                break;
+
+        }
+    }
+);
+
+
+
+
+
+
+
 
 // This functions selects the computers choice in Rock Paper Scissors
 function getComputerChoice ()
@@ -129,15 +175,6 @@ function playGame()
     }
 }
 
-// Main body
 
-// humanScore = 0;
-// computerScore = 0;
 
-// const computerChoice = getComputerChoice();
-// const playerChoice = getPlayerChoice();
-
-// result = playRound(computerChoice, playerChoice).toUpperCase();
-// console.log(result)
-
-playGame()
+// playGame()

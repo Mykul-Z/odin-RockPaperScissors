@@ -6,21 +6,28 @@
     <title>Rock Paper Scissors</title>
 </head>
 <body>
-    <script src="script.js"></script>
+
     <h1>Rock Paper Scissors</h1>
     <p> This is a rock paper scissors game</p>
 
     <h2>Game Controls</h2>
-    <button>Start Game</button>
-
+    
     <!-- Player selection options -->
-    <button id="rock">Rock</button>
-    <button id="paper">Paper</button>
-    <button id="scissors">Scissors</button>    
+     <ul id="playerOptions"> 
+        <li><button id="rock">Rock</button></li>
+        <li><button id="paper">Paper</button></li>
+        <li><button id="scissors">Scissors</button></li>
+     </ul>
+        
 
+    <!-- Display the results of RPS -->
+    <!-- Winner of round + current score --> 
     <div id="displayResults">
         <p>These are the results of RPS</p>
 
     </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
