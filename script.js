@@ -1,9 +1,16 @@
 
  
-//  Main body
+//  Initialize variables 
 
-humanScore = 0;
-computerScore = 0;
+playerScoreCounter = 0;
+computerScoreCounter = 0;
+roundCounter = 0;
+
+let playerScore = document.querySelector("#playerScore");
+let computerScore = document.querySelector("#computerScore");
+let roundNumber = document.querySelector("#roundNumber");
+
+let currentRoundResult = document.querySelector("#currentRoundResult");
 
 // Event listeners:
 
@@ -21,28 +28,49 @@ playerOptions.addEventListener("click", (event) =>
                 computerChoice = getComputerChoice();
 
                 roundResult = playRound(playerChoice, computerChoice);
-                console.log(roundResult);
+                changeScore(roundResult);
+                currentRoundResult.textContent = "The result of the last round of RPS is: " + roundResult;
+
                 break;
             case "paper":
                 playerChoice = "paper";
                 computerChoice = getComputerChoice();
 
                 roundResult = playRound(playerChoice, computerChoice);
-                console.log(roundResult);
+                changeScore(roundResult);
+                currentRoundResult.textContent = "The result of the last round of RPS is: " + roundResult;
+
                 break;
             case "scissors":
                 playerChoice = "scissors";
                 computerChoice = getComputerChoice();
 
                 roundResult = playRound(playerChoice, computerChoice);
-                console.log(roundResult);
+                changeScore(roundResult);
+                currentRoundResult.textContent = "The result of the last round of RPS is: " + roundResult;
+
                 break;
 
         }
     }
 );
 
+function changeScore(winner)
+{
+    roundCounter ++;
+    roundNumber.textContent = roundCounter;
 
+    if (winner == "player")
+    {
+        playerScoreCounter ++;
+        playerScore.textContent = playerScoreCounter;
+    }
+    else if (winner = "computer")
+    {
+        computerScoreCounter ++;
+        computerScore.textContent = computerScoreCounter;
+    }
+}
 
 
 
@@ -74,6 +102,7 @@ function getComputerChoice ()
 }
 
 // This function gets the player's choice 
+// This function was used before the UI was implemented 
 function getPlayerChoice()
 {
     playerChoice = prompt("Please enter your choice of Rock, Papers, or Scissors:");
